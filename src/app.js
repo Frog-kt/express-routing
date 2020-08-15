@@ -23,6 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({ secret: 'this is secret keyword' }));
 
 // ルーティング
+const hello = require('./routes/hello');
 const example = require('./routes/example');
 
+app.use(hello); // => /hello
 app.use(example); // => /example
